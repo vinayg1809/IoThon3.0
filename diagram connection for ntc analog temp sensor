@@ -1,0 +1,5 @@
+[ "esp:TX0", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX0", "$serialMonitor:TX", "", [] ],
+    [ "ntc1:GND", "esp:GND.1", "black", [ "v99.82", "h-158.64" ] ],
+    [ "ntc1:VCC", "esp:3V3", "red", [ "v113.55", "h-143.7" ] ],
+    [ "ntc1:OUT", "esp:D4", "green", [ "v74.65", "h-137.05" ] ]
