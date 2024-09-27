@@ -1,0 +1,37 @@
+#include <Adafruit_MPU6050.h>
+#include <Adafruit_Sensor.h>
+#include <Wire.h>
+Adafruit_MPU6050 m_p_u;
+void setup() {
+  // put your setup code here, to run once:
+  Serial.begin(115200);
+  while(!Serial)
+  delay(20);
+  if(!m_p_u.begin()){
+    while(1){
+      delay(20);
+    }
+  }
+}
+
+void loop() {
+sensors_event_t acc, gcc, temp;
+m_p_u.getEvent(&acc, &gcc, &temp);
+Serial.println("Acceleration on x axes");
+Serial.println(acc.acceleration.x);
+  delay(1000); // this speeds up the simulation
+
+Serial.println("Acceleration on y axes");
+Serial.println(acc.acceleration.y);
+  delay(1000);
+
+Serial.println("Acceleration on z axes");
+Serial.println(acc.acceleration.z);
+  delay(1000);
+
+Serial.println("Rotation of x axes: ");
+Serial.println((gcc.gyro.x)*180/3.14);
+  delay(1000);
+
+
+}
